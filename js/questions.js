@@ -1,0 +1,42 @@
+const QUESTIONS = [
+  {
+    i1: 12,
+    i2: 50,
+    i3: null,
+    operator: "+",
+    score: 10,
+    answer: 62,
+  },
+  {
+    i1: 12,
+    i2: 50,
+    i3: null,
+    operator: "-",
+    score: 10,
+    answer: -38,
+  },
+  {
+    i1: 11,
+    i2: 13,
+    i3: null,
+    operator: "*",
+    score: 10,
+    answer: 143,
+  },
+  {
+    i1: 5,
+    i2: 5,
+    i3: null,
+    operator: "/",
+    score: 10,
+    answer: 1,
+  },
+  {
+    i1: 20,
+    i2: null,
+    i3: 16,
+    operator: "+",
+    score: 10,
+    answer: -4,
+  },
+];
