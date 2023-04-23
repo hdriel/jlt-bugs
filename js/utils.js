@@ -11,6 +11,6 @@ async function* getQuestion() {
   let i = 0;
   do {
     currentQuestion = QUESTIONS[i++];
-    yield currentQuestion;
+    yield { no: i, ...currentQuestion };
   } while (currentQuestion);
 }

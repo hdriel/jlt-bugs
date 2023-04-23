@@ -1,5 +1,10 @@
 function TextElement(elementId) {
   let value = "";
+  let element = document.getElementById(elementId);
+
+  function init() {
+    element ||= document.getElementById(elementId);
+  }
 
   function updateValue(newValue) {
     value = newValue;
@@ -7,11 +12,19 @@ function TextElement(elementId) {
   }
 
   function render(value) {
-    const element = document.getElementById(elementId);
     if (element) element.innerText = `${value}`;
   }
 
+  function remove() {
+    if (element) {
+      element.remove();
+      element = null;
+    }
+  }
+
   return {
+    init,
+    remove,
     update: updateValue,
     getValue: () => value,
     reset: () => updateValue(0),

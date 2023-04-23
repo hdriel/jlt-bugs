@@ -1,8 +1,9 @@
 function NumberInputElement(elementId) {
   let value = 0;
+  let element = document.getElementById(elementId);
 
   function init() {
-    const element = document.getElementById(elementId);
+    element ||= document.getElementById(elementId);
     if (element)
       element.addEventListener("change", (event) => {
         value = +event.target.value || 0;
@@ -15,12 +16,10 @@ function NumberInputElement(elementId) {
   }
 
   function render(value) {
-    const element = document.getElementById(elementId);
     if (element) element.value = value;
   }
 
   function disabled(isDisabled) {
-    const element = document.getElementById(elementId);
     if (element) {
       if (isDisabled === undefined) {
         return element.getAttribute("disabled");
@@ -29,9 +28,17 @@ function NumberInputElement(elementId) {
     }
   }
 
+  function remove() {
+    if (element) {
+      element.remove();
+      element = null;
+    }
+  }
+
   return {
     init,
     disabled,
+    remove,
     update: updateValue,
     getValue: () => value,
     reset: () => updateValue(0),

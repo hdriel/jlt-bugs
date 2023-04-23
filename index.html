@@ -5,6 +5,15 @@
     <title>JLT - BUGS</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="js/questions.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/utils.js"></script>
@@ -12,6 +21,7 @@
     <script src="js/elements/NumberInputElement.js"></script>
   </head>
   <body>
+    <div id="game-title">QUESTION 1</div>
     <div class="equation">
       <label for="inp-1" class="inp">
         <input type="text" id="inp-1" placeholder="&nbsp;" />
@@ -35,7 +45,11 @@
         <span class="focus-bg"></span>
       </label>
     </div>
-    <button id="submit" class="submit" onclick="submitAnswer(event)">
+    <button
+      id="submit"
+      class="btn btn-4 btn-sep icon-info"
+      onclick="submitAnswer(event)"
+    >
       Submit
     </button>
 

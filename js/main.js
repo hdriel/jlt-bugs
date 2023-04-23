@@ -1,4 +1,4 @@
-const questionGenerator = getQuestion();
+let questionGenerator = getQuestion();
 
 const input1 = NumberInputElement("inp-1");
 input1.init();
@@ -8,6 +8,9 @@ const input3 = NumberInputElement("inp-3");
 input3.init();
 
 const sign = TextElement("operator");
+sign.init();
+const gameTitle = TextElement("game-title");
+gameTitle.init();
 
 let isGameOver = false;
 let totalScore = 0;
@@ -42,16 +45,27 @@ async function submitAnswer(event) {
     generateNextQuestion();
   } else {
     isGameOver = true;
+    questionGenerator = getQuestion();
+    gameTitle.update(`GAME-OVER (score: ${totalScore})`);
     console.log("Game-over");
+
+    totalScore = 0;
+    input1.remove();
+    input2.remove();
+    input3.remove();
+    sign.remove();
+    [...document.querySelectorAll(".sign")].forEach((sign) => sign.remove());
+    document.getElementById("submit").remove();
   }
 }
 
 function initQuestion(question) {
-  const { i1, i2, i3, operator } = question;
+  const { i1, i2, i3, operator, no } = question;
   input1.update(i1);
   input2.update(i2);
   input3.update(i3);
   sign.update(operator);
+  gameTitle.update(`Question #${no}`);
 }
 
 function generateNextQuestion() {

@@ -1,5 +1,7 @@
 @import "./variables";
 @import "./input";
+@import "./submit";
+@import "./background";
 
 * {
   box-sizing: border-box;
@@ -11,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   flex-direction: column;
-  gap: 2em;
+  gap: 12em;
 }
 
 .equation {
@@ -28,4 +30,9 @@ body {
     align-items: center;
     font-size: 40px;
   }
+}
+
+#game-title {
+  font-size: 35px;
+  color: white;
 }
