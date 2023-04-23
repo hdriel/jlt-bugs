@@ -1,0 +1,31 @@
+@import "./variables";
+@import "./input";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.equation {
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+
+  .sign {
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+}
