@@ -48,6 +48,12 @@ function calcEquation(a, b, c, op) {
   const func = classifyOperationBySing(op);
   const oppositeFunc = oppositeOperatorBySign(op);
   if (c === null) return func(a, b);
+  if (b === null) {
+    if (["+", "-"].includes(op)) {
+      return func(c, a);
+    } else if (["*", "/"].includes(op)) {
+      return oppositeFunc(c, a);
+    }
+  }
   if (a === null) return oppositeFunc(c, b);
-  if (b === null) return oppositeFunc(c, a);
 }

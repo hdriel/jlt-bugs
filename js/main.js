@@ -23,6 +23,7 @@ async function submitAnswer(event) {
   const c = input3.getValue();
 
   let answer;
+  debugger;
   const computedAnswer = calcEquation(i1, i2, i3, operator);
   switch (null) {
     case i1:
@@ -48,6 +49,7 @@ async function submitAnswer(event) {
     questionGenerator = getQuestion();
     gameTitle.update(`GAME-OVER (score: ${totalScore})`);
     console.log("Game-over");
+    console.log("expected to", answer, "got", computedAnswer);
 
     totalScore = 0;
     input1.remove();
