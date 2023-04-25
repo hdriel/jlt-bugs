@@ -80,7 +80,7 @@ function initQuestion(question) {
   input1.element.focus();
 
   sign.update(operator);
-  gameTitle.update(`Question #${no}`);
+  gameTitle.update(`Question #${no}/${QUESTIONS.length}`);
 }
 
 function generateNextQuestion() {
