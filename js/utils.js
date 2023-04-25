@@ -6,10 +6,18 @@ function confetti(event) {
   });
 }
 
+function shuffleList(list) {
+  return list
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+}
+
 async function* getQuestion() {
+  const shuffledList = shuffleList(QUESTIONS);
   let question;
   let i = 0;
-  while ((question = QUESTIONS[i++])) {
+  while ((question = shuffledList[i++])) {
     yield { no: i, ...question };
   }
 }
@@ -28,8 +36,8 @@ function setGameOver() {
   document.getElementById("submit").remove();
 }
 
-async function submitAnswer(event) {
-  const { score } = question;
+async function submitAnswer() {
+  const { score } = question ?? {};
   const a = input1.getValue();
   const b = input2.getValue();
   const c = input3.getValue();
@@ -40,10 +48,19 @@ async function submitAnswer(event) {
   if (isAnswerCorrectly) {
     totalScore = totalScore + score;
     console.log("Great!");
-    jsConfetti.addConfetti();
+    jsConfetti.addConfetti({
+      emojis: ["✅"],
+      emojiSize: 50,
+      confettiNumber: 60,
+    });
     generateNextQuestion();
   } else {
     isGameOver = true;
+    jsConfetti.addConfetti({
+      emojis: ["❌"],
+      emojiSize: 100,
+      confettiNumber: 30,
+    });
     console.log("Game-over");
   }
 }
@@ -51,17 +68,16 @@ async function submitAnswer(event) {
 function initQuestion(question) {
   const { i1, i2, i3, operator, no } = question;
 
-  input1.update(i1);
-  input1.disabled(i1 !== null);
-  input1.element.focus();
+  input3.update(i3);
+  input3.element.focus();
 
   input2.update(i2);
   input2.disabled(i2 !== null);
   input2.element.focus();
 
-  input3.update(i3);
-  input3.disabled(i3 !== null);
-  input3.element.focus();
+  input1.update(i1);
+  input1.disabled(i1 !== null);
+  input1.element.focus();
 
   sign.update(operator);
   gameTitle.update(`Question #${no}`);

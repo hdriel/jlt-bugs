@@ -7,7 +7,7 @@ function NumberInputElement(elementId) {
     if (!element) return;
 
     element.addEventListener("change", (event) => {
-      value = +event.target.value || 0;
+      if (event.target.value !== "") value = +event.target.value;
     });
 
     element.addEventListener("keydown", (event) => {
