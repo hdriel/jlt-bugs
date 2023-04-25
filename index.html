@@ -5,6 +5,7 @@
     <title>JLT - BUGS</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <link
       href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -15,8 +16,8 @@
       type="text/css"
     />
     <script src="js/questions.js"></script>
-    <script src="js/helper.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/globalEvents.js"></script>
     <script src="js/elements/TextElement.js"></script>
     <script src="js/elements/NumberInputElement.js"></script>
   </head>
@@ -24,7 +25,7 @@
     <div id="game-over" style="display: none">GAME OVER</div>
     <div id="game-title">QUESTION 1</div>
     <div class="equation">
-      <label for="inp-1" class="inp">
+      <label for="inp-1" class="inp" onclick="event.stopPropagation();">
         <input type="text" id="inp-1" placeholder="&nbsp;" autocomplete="off" />
         <span class="label">Variable A</span>
         <span class="focus-bg"></span>
@@ -32,7 +33,7 @@
 
       <div id="operator" class="sign">+</div>
 
-      <label for="inp-2" class="inp">
+      <label for="inp-2" class="inp" onclick="event.stopPropagation();">
         <input type="text" id="inp-2" placeholder="&nbsp;" autocomplete="off" />
         <span class="label">Variable B</span>
         <span class="focus-bg"></span>
@@ -40,7 +41,7 @@
 
       <div class="sign">=</div>
 
-      <label for="inp-3" class="inp">
+      <label for="inp-3" class="inp" onclick="event.stopPropagation();">
         <input type="text" id="inp-3" placeholder="&nbsp;" autocomplete="off" />
         <span class="label">Result</span>
         <span class="focus-bg"></span>
@@ -49,7 +50,7 @@
     <button
       id="submit"
       class="btn btn-2 btn-sep icon-cart"
-      onclick="submitAnswer(event)"
+      onclick="event.stopPropagation(); submitAnswer(event)"
     >
       Submit
     </button>

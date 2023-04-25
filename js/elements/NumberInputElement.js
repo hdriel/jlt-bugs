@@ -4,10 +4,17 @@ function NumberInputElement(elementId) {
 
   function init() {
     element ||= document.getElementById(elementId);
-    if (element)
-      element.addEventListener("change", (event) => {
-        value = +event.target.value || 0;
-      });
+    if (!element) return;
+
+    element.addEventListener("change", (event) => {
+      value = +event.target.value || 0;
+    });
+
+    element.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        setTimeout(() => triggerEvent(GLOBAL_EVENTS.PRESS_KEY_ENTER, event));
+      }
+    });
   }
 
   function updateValue(newValue) {
@@ -16,16 +23,19 @@ function NumberInputElement(elementId) {
   }
 
   function render(value) {
-    if (element) element.value = value;
+    if (!element) return;
+    element.value = value;
   }
 
   function disabled(isDisabled) {
-    if (element) {
-      if (isDisabled === undefined) {
-        return element.getAttribute("disabled");
-      }
-      element.setAttribute("disabled", isDisabled);
+    if (!element) return;
+
+    if (typeof isDisabled === "boolean") {
+      if (isDisabled) element.setAttribute("disabled", true);
+      else element.removeAttribute("disabled");
     }
+
+    if (isDisabled === undefined) return element.getAttribute("disabled");
   }
 
   function remove() {
@@ -44,5 +54,6 @@ function NumberInputElement(elementId) {
     reset: () => updateValue(0),
     inc: () => updateValue(value + 1),
     dec: () => updateValue(value - 1),
+    element: element,
   };
 }

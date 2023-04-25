@@ -1,19 +1,17 @@
 const QUESTIONS = [
-  // {
-  //   i1: 2,
-  //   i2: 5,
-  //   i3: null,
-  //   operator: "+",
-  //   score: 10,
-  //   answer: 7,
-  // },
+  {
+    i1: 2,
+    i2: 5,
+    i3: null,
+    operator: "+",
+    score: 10,
+  },
   {
     i1: 8,
     i2: null,
     i3: 10,
     operator: "-",
     score: 10,
-    answer: -2,
   },
   {
     i1: null,
@@ -21,15 +19,13 @@ const QUESTIONS = [
     i3: 21,
     operator: "*",
     score: 10,
-    answer: 3,
   },
   {
     i1: 5,
-    i2: 0,
+    i2: null,
     i3: 5,
     operator: "/",
     score: 10,
-    answer: 1 / 5,
   },
   {
     i1: 20,
@@ -37,6 +33,5 @@ const QUESTIONS = [
     i3: 16,
     operator: "+",
     score: 10,
-    answer: -4,
   },
 ];
