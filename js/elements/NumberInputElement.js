@@ -1,5 +1,5 @@
 function NumberInputElement(elementId) {
-  let value = 0;
+  let value = undefined;
   let element = document.getElementById(elementId);
 
   function init() {
