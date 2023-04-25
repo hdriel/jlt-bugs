@@ -2,7 +2,7 @@
 .btn {
   border: none;
   font-family: "Lato";
-  font-size: inherit;
+  font-size: $fontSize;
   color: inherit;
   background: none;
   cursor: pointer;
@@ -70,23 +70,23 @@
   height: 100%;
   left: 0;
   top: 0;
-  line-height: 3;
+  line-height: 2;
   font-size: 140%;
   width: 60px;
 }
 
-/* Button 2 */
+/* Button 3 */
 .btn-2 {
-  background: #2ecc71;
+  background: #34495e;
   color: #fff;
 }
 
 .btn-2:hover {
-  background: #27ae60;
+  background: #2c3e50;
 }
 
 .btn-2:active {
-  background: #27ae60;
+  background: #2c3e50;
   top: 2px;
 }
 
@@ -95,57 +95,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  line-height: 3;
-  font-size: 140%;
-  width: 60px;
-}
-
-/* Button 3 */
-.btn-3 {
-  background: #e74c3c;
-  color: #fff;
-}
-
-.btn-3:hover {
-  background: #c0392b;
-}
-
-.btn-3:active {
-  background: #c0392b;
-  top: 2px;
-}
-
-.btn-3:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 3;
-  font-size: 140%;
-  width: 60px;
-}
-
-/* Button 3 */
-.btn-4 {
-  background: #34495e;
-  color: #fff;
-}
-
-.btn-4:hover {
-  background: #2c3e50;
-}
-
-.btn-4:active {
-  background: #2c3e50;
-  top: 2px;
-}
-
-.btn-4:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 3;
+  line-height: 2;
   font-size: 140%;
   width: 60px;
 }
@@ -154,14 +104,6 @@
 
 .icon-cart:before {
   content: "\f07a";
-}
-
-.icon-heart:before {
-  content: "\f55a";
-}
-
-.icon-info:before {
-  content: "\f05a";
 }
 
 .icon-send:before {

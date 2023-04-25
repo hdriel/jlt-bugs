@@ -21,11 +21,12 @@
     <script src="js/elements/NumberInputElement.js"></script>
   </head>
   <body>
+    <div id="game-over" style="display: none">GAME OVER</div>
     <div id="game-title">QUESTION 1</div>
     <div class="equation">
       <label for="inp-1" class="inp">
         <input type="text" id="inp-1" placeholder="&nbsp;" autocomplete="off" />
-        <span class="label">Number A</span>
+        <span class="label">Variable A</span>
         <span class="focus-bg"></span>
       </label>
 
@@ -33,7 +34,7 @@
 
       <label for="inp-2" class="inp">
         <input type="text" id="inp-2" placeholder="&nbsp;" autocomplete="off" />
-        <span class="label">Number B</span>
+        <span class="label">Variable B</span>
         <span class="focus-bg"></span>
       </label>
 
@@ -47,7 +48,7 @@
     </div>
     <button
       id="submit"
-      class="btn btn-4 btn-sep icon-info"
+      class="btn btn-2 btn-sep icon-cart"
       onclick="submitAnswer(event)"
     >
       Submit
